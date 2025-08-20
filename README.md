@@ -16,17 +16,17 @@
 **1)Frontend-**
 *React + Tailwind CSS*<br/>
 *Vite for fast bundling*<br/>
-Augmented Reality integration
+Augmented Reality integration<br/>
 **2)Backend-**
 *Node.js + Express (REST APIs)*<br/>
 *SQL*<br/>
-*Redis (for design request queues)*
+*Redis (for design request queues)*<br/>
 **3)AI Layer-**
 *Pytorch,Hugging face, transformers, OpenCV (image generation)*<br/>
 *Custom ML models (fashion + craft fine-tuned)*<br/>
-**4)AR try-on module**
-**5)Deployment on  Azure**
-**6)Future: Blockchain layer**
+**4)AR try-on module**<br/>
+**5)Deployment on  Azure**<br/>
+**6)Future: Blockchain layer**<br/>
 # How It Works:
 *1)Customer Input: Upload image/sketch OR type imagination prompt.*<br/>
 *2)GenAI Engine: Generates multiple design variations.*<br/>
