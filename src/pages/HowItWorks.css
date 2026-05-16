@@ -1,0 +1,102 @@
+.how-page {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.how-header h1 {
+  font-size: 42px;
+  color: var(--primary-purple);
+}
+
+.how-header p {
+  margin-top: 10px;
+  opacity: 0.8;
+  font-size: 18px;
+}
+
+.steps-section {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.step-card {
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px  #C6A972;
+}
+
+.step-card h2 {
+  margin-bottom: 15px;
+  color: var(--primary-purple-light);
+}
+
+.ai-section {
+  margin-top: 80px;
+  border: 2px solid  #C4B9AA;
+  border-radius: 18px;
+  color : white;
+  background-color:#C4B9AA;
+}
+
+.ai-box {
+  margin-top: 30px;
+  padding: 30px;
+  background: #C4B9AA;
+  border-radius: 18px;
+  backdrop-filter: blur(16px);
+}
+
+textarea {
+  width: 100%;
+  height: 120px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid #aaa3;
+  padding: 15px;
+  border-radius: 12px;
+  color: white;
+  font-size: 16px;
+}
+
+.button-row {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.ai-btn {
+  padding: 10px 20px;
+  border: 1px solid var(--primary-purple);
+  background: transparent;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.gen-btn {
+  padding: 10px 28px;
+  border: none;
+  background: var(--primary-purple);
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.output-area {
+  margin-top: 40px;
+  padding: 30px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 14px;
+  color: white;
+}

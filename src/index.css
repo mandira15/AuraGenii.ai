@@ -1,0 +1,309 @@
+/* ========== GOOGLE FONTS ========== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+/* ========== ROOT VARIABLES ========== */
+
+:root {
+
+  /* Luxury Palette */
+  --warm-white: #F8F5F2;
+  --soft-beige: #EFE6DD;
+  --champagne-gold: #C6A972;
+  --gold-hover: #B8945F;
+
+  /* Text */
+  --text-dark: #181818;
+  --text-light: #6F6A64;
+
+  /* UI */
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --border-light: rgba(0, 0, 0, 0.08);
+
+  /* Shadows */
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+  /* Animation */
+  --transition-smooth: all 0.35s ease;
+}
+
+/* ========== RESET ========== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========== HTML ========== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========== BODY ========== */
+
+body {
+
+  font-family: 'Inter', sans-serif;
+
+  background:
+    linear-gradient(
+      180deg,
+      #F8F5F2 0%,
+      #F3ECE5 40%,
+      #EFE6DD 75%,
+      #E7D8CA 100%
+    );
+
+  color: var(--text-dark);
+
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+  -webkit-font-smoothing: antialiased;
+
+  text-rendering: optimizeLegibility;
+}
+
+/* ========== ROOT APP ========== */
+
+#root {
+  width: 100%;
+}
+
+/* ========== GLOBAL LINKS ========== */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ========== GLOBAL BUTTON STYLE ========== */
+
+button {
+
+  border: none;
+
+  outline: none;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  transition: var(--transition-smooth);
+}
+
+/* ========== COMMON CONTAINER ========== */
+
+.container {
+
+  width: 100%;
+
+  max-width: 1400px;
+
+  margin: auto;
+
+  padding: 0 40px;
+}
+
+/* ========== COMMON SECTION SPACING ========== */
+
+.section {
+
+  padding: 100px 0;
+}
+
+/* ========== GLOBAL HEADING STYLES ========== */
+
+.section-title {
+
+  font-family: 'Playfair Display', serif;
+
+  font-size: 56px;
+
+  font-weight: 600;
+
+  line-height: 1.1;
+
+  letter-spacing: -1.5px;
+
+  text-align: center;
+
+  margin-bottom: 20px;
+}
+
+.section-subtitle {
+
+  font-size: 18px;
+
+  color: var(--text-light);
+
+  text-align: center;
+
+  max-width: 700px;
+
+  margin: auto;
+
+  line-height: 1.8;
+}
+
+/* ========== GLOBAL BUTTON CLASS ========== */
+
+.primary-btn {
+
+  padding: 16px 38px;
+
+  border-radius: 999px;
+
+  background: var(--champagne-gold);
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.3px;
+
+  box-shadow:
+    0 8px 28px rgba(198, 169, 114, 0.18);
+}
+
+.primary-btn:hover {
+
+  transform: translateY(-3px);
+
+  background: var(--gold-hover);
+
+  box-shadow:
+    0 14px 34px rgba(198, 169, 114, 0.28);
+}
+
+/* ========== SECONDARY BUTTON ========== */
+
+.secondary-btn {
+
+  padding: 16px 34px;
+
+  border-radius: 999px;
+
+  background: transparent;
+
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  color: var(--text-dark);
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  backdrop-filter: blur(12px);
+}
+
+.secondary-btn:hover {
+
+  background: rgba(255, 255, 255, 0.5);
+
+  transform: translateY(-2px);
+}
+
+/* ========== GLASS CARD ========== */
+
+.glass-card {
+
+  background: rgba(255, 255, 255, 0.5);
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+
+  backdrop-filter: blur(14px);
+
+  border-radius: 28px;
+
+  box-shadow: var(--shadow-soft);
+}
+
+/* ========== IMAGES ========== */
+
+img {
+
+  width: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+/* ========== SCROLLBAR ========== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #EFE6DD;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C6A972;
+  border-radius: 20px;
+}
+
+/* ========== SELECTION COLOR ========== */
+
+::selection {
+  background: var(--champagne-gold);
+  color: white;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+@media (max-width: 992px) {
+
+  .container {
+    padding: 0 24px;
+  }
+
+  .section-title {
+    font-size: 42px;
+  }
+
+  .section-subtitle {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .section {
+    padding: 70px 0;
+  }
+
+  .section-title {
+    font-size: 36px;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+
+    padding: 14px 28px;
+
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .container {
+    padding: 0 18px;
+  }
+
+  .section-title {
+    font-size: 30px;
+  }
+
+  .section-subtitle {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+}

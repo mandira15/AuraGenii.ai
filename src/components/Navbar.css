@@ -1,0 +1,239 @@
+/* ========== NAVBAR MAIN ========== */
+
+.navbar {
+
+  width: 100%;
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  background: #E7E3DD;
+
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: all 0.35s ease;
+}
+
+/* Hide / Show on Scroll */
+
+.nav-hide {
+
+  transform: translateY(-100%);
+}
+
+.nav-show {
+
+  transform: translateY(0);
+}
+
+/* ========== NAV CONTAINER ========== */
+
+.nav-container {
+
+  max-width: 1280px;
+
+  margin: auto;
+
+  padding: 18px 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+/* ========== LOGO ========== */
+
+.nav-logo {
+
+  font-family: 'Playfair Display', serif;
+
+  font-size: 28px;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  color: #F8F5F2;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.nav-logo:hover {
+
+  color: #C6A972;
+}
+
+/* ========== NAV LINKS ========== */
+
+.nav-links {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 34px;
+}
+
+.nav-links a {
+
+  text-decoration: none;
+
+  color: rgba(23, 23, 23, 0.88);
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.4px;
+
+  position: relative;
+
+  transition: all 0.3s ease;
+}
+
+/* Elegant Underline Hover */
+
+.nav-links a::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -8px;
+
+  width: 0%;
+
+  height: 1.5px;
+
+  border-radius: 10px;
+
+  background: #C6A972;
+
+  transition: all 0.35s ease;
+}
+
+.nav-links a:hover {
+
+  color: #C6A972;
+}
+
+.nav-links a:hover::after {
+
+  width: 100%;
+}
+
+/* ========== BUTTONS ========== */
+
+.nav-buttons {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+}
+
+/* Login Button */
+
+.login-btn {
+
+  background: transparent;
+
+  color: #1b1a1a;
+
+  border: 1px solid rgba(198, 169, 114, 0.5);
+
+  padding: 10px 22px;
+
+  border-radius: 999px;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition: all 0.35s ease;
+}
+
+.login-btn:hover {
+
+  background: rgba(198, 169, 114, 0.12);
+
+  border-color: #C6A972;
+
+  color: #C6A972;
+}
+
+/* Start Designing Button */
+
+.start-btn {
+
+  background: #C6A972;
+
+  color: #ffffff;
+
+  padding: 11px 24px;
+
+  border-radius: 999px;
+
+  border: none;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.3px;
+
+  cursor: pointer;
+
+  transition: all 0.35s ease;
+
+  box-shadow:
+    0 8px 24px rgba(198, 169, 114, 0.18);
+}
+
+.start-btn:hover {
+
+  transform: translateY(-2px);
+
+  background: #B8945F;
+
+  box-shadow:
+    0 12px 30px rgba(198, 169, 114, 0.28);
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 900px) {
+
+  .nav-container {
+
+    padding: 16px 22px;
+  }
+
+  .nav-links {
+
+    gap: 18px;
+  }
+
+  .nav-logo {
+
+    font-size: 24px;
+  }
+
+  .login-btn,
+  .start-btn {
+
+    padding: 9px 18px;
+
+    font-size: 13px;
+  }
+}

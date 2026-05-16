@@ -1,0 +1,295 @@
+/* ========== HOME PAGE ========== */
+
+.home-page {
+
+  width: 100%;
+
+  overflow-x: hidden;
+}
+
+/* ========== HERO SECTION ========== */
+
+.main-content {
+
+  width: 100%;
+
+  min-height: 88vh;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 0 20px;
+
+  position: relative;
+}
+
+/* Background Glow */
+
+.main-content::before {
+
+  content: "";
+
+  position: absolute;
+
+  width: 700px;
+  height: 700px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(198, 169, 114, 0.16) 0%,
+      transparent 70%
+    );
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  z-index: -1;
+}
+
+/* ========== HERO HEADING ========== */
+
+.main-content h1 {
+
+  font-family: 'Playfair Display', serif;
+
+  font-size: 96px;
+
+  line-height: 1.02;
+
+  font-weight: 600;
+
+  letter-spacing: -3px;
+
+  color: var(--text-dark);
+
+  max-width: 1000px;
+
+  margin-bottom: 26px;
+}
+
+/* Gold Highlight */
+
+.main-content h1 span {
+
+  color: var(--champagne-gold);
+}
+
+/* ========== HERO SUBTITLE ========== */
+
+.main-content p {
+
+  font-size: 20px;
+
+  line-height: 1.8;
+
+  color: var(--text-light);
+
+  max-width: 760px;
+
+  margin-bottom: 42px;
+}
+
+/* ========== HERO BUTTON ========== */
+
+.hero-btn {
+
+  background: #C6A972;
+
+  color: #ffffff;
+
+  padding: 11px 24px;
+
+  border-radius: 999px;
+
+  border: none;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.3px;
+
+  cursor: pointer;
+
+  transition: all 0.35s ease;
+
+  box-shadow:
+    0 8px 24px rgba(198, 169, 114, 0.18);
+}
+
+.hero-btn:hover {
+
+  transform: translateY(-2px);
+
+  background: #B8945F;
+
+  box-shadow:
+    0 12px 30px rgba(198, 169, 114, 0.28);
+}
+
+/* ========== MOCKUPS SECTION ========== */
+
+.mock-ups {
+
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 30px;
+
+  padding: 0 55px 90px;
+}
+
+/* ========== MOCKUP CARDS ========== */
+
+.mock-up-card {
+
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 22px;
+
+  border-radius: 30px;
+
+  min-height: 420px;
+
+  transition: var(--transition-smooth);
+
+  animation: floatCard 5s ease-in-out infinite;
+}
+
+/* Floating Delay */
+
+.mock-up-card:nth-child(2) {
+
+  animation-delay: 1s;
+}
+
+.mock-up-card:nth-child(3) {
+
+  animation-delay: 2s;
+}
+
+/* Hover */
+
+.mock-up-card:hover {
+
+  transform: translateY(-10px);
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.08);
+}
+
+/* ========== FLOATING ANIMATION ========== */
+
+@keyframes floatCard {
+
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* ========== FOOTER ========== */
+
+.footer {
+
+  margin-top: 70px;
+
+  text-align: center;
+
+  padding: 42px 20px;
+
+  border-top: 1px solid var(--border-light);
+}
+
+.footer p {
+
+  font-size: 14px;
+
+  color: var(--text-light);
+
+  letter-spacing: 0.4px;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+@media (max-width: 1100px) {
+
+  .main-content h1 {
+
+    font-size: 72px;
+  }
+
+  .mock-ups {
+
+    grid-template-columns: 1fr;
+
+    padding: 0 24px 70px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .main-content {
+
+    min-height: 75vh;
+
+    padding: 40px 20px;
+  }
+
+  .main-content h1 {
+
+    font-size: 54px;
+
+    letter-spacing: -1.5px;
+  }
+
+  .main-content p {
+
+    font-size: 17px;
+  }
+
+  .mock-up-card {
+
+    min-height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .main-content h1 {
+
+    font-size: 42px;
+  }
+
+  .main-content p {
+
+    font-size: 15px;
+
+    line-height: 1.7;
+  }
+
+  .mock-ups {
+
+    padding: 0 18px 60px;
+  }
+}
