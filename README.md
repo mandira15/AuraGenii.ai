@@ -1,16 +1,35 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# AuraGenii.ai
+**Hey everyone! I am building an ecommerce web application which will bring Imagination to Reality — powered by Generative AI and Local Craftsmanship.**
+# Overview:
+  *  This platform bridges the gap between customer imagination and artistic craftsmanship. 
+  *  Customers describe, draw, or upload their ideas.
+  *  Generative AI transforms these inputs into custom product designs (clothing).
+  *  Nearby craftsmen and artists receive the design and bring it to life.
+  *  It’s not just an e-commerce site — it’s a co-creation ecosystem where technology + tradition meet.
+# Features:
+*🖌 GenAI Design Studio: Generate designs from text prompts, sketches, or images.* <br/>
+*👕 Virtual Try-On: AR-based preview before ordering.*<br/>
+*🤝 Local Craftsmen Integration: AI routes designs to verified nearby artists.*<br/>
+*🔐 Blockchain-Backed Ownership (Future): Customers retain design IP with smart contracts.*<br/>
+*🛒 Seamless E-Commerce: Order, track, and review handcrafted products.*<br/>
+# Tech Stack:
+**1)Frontend-**
+*React + Tailwind CSS*<br/>
+*Vite for fast bundling*<br/>
+Augmented Reality integration<br/>
+**2)Backend-**
+*Node.js + Express (REST APIs)*<br/>
+*SQL*<br/>
+*Redis (for design request queues)*<br/>
+**3)AI Layer-**
+*Pytorch,Hugging face, transformers, OpenCV (image generation)*<br/>
+*Custom ML models (fashion + craft fine-tuned)*<br/>
+**4)AR try-on module**<br/>
+**5)Deployment on  Azure**<br/>
+**6)Future: Blockchain layer**<br/>
+# How It Works:
+*1)Customer Input: Upload image/sketch OR type imagination prompt.*<br/>
+*2)GenAI Engine: Generates multiple design variations.*<br/>
+*3)Preview & Customization: AR try-on or style modifications.*<br/>
+*4)Craftsman Selection: AI suggests nearby artisans based on skill & location.*<br/>
+*5)Order Fulfillment: Secure payment, order tracking, and delivery.*<br/>
