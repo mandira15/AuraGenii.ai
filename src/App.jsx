@@ -6,6 +6,7 @@ import Gallery from "./pages/Gallery.jsx";
 import Tailors from "./pages/Tailors.jsx";
 import About from "./pages/About.jsx";
 import AuthPage from "./pages/AuthPage.jsx";
+import Login from "./pages/Login.jsx";
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/tailors" element={<Tailors />} />
         <Route path="/about" element={<About />} />
+        <Route path="/auth/login" element={<Login />} />
+        <Route path="/auth" element={<AuthPage />} />
       </Routes>
       
 

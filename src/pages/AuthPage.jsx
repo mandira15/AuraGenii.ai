@@ -1,12 +1,13 @@
 console.log("AuthPage loaded");
 import { useState } from "react";
 import { registerUser, loginUser } from "../api/auth";
-
+import "./AuthPage.css";
+import { useNavigate } from "react-router-dom";
 export default function AuthPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const navigate = useNavigate();
   const signup = async () => {
     try {
       const res = await registerUser({
@@ -17,7 +18,9 @@ export default function AuthPage() {
 
       console.log(res.data);
 
-      alert("Signup successful");
+      localStorage.setItem("token", res.data.token);
+
+      navigate("/how-it-works");
     } catch (err) {
       console.log(err.response?.data || err.message);
     }
@@ -41,26 +44,39 @@ export default function AuthPage() {
   };
 
   return (
-    <div>
-      <h2>Signup</h2>
+    <div className="auth-container">
+      <div className="auth-card">
+        <h1>AuraGenie AI</h1>
+        <p>Create your account and start designing</p>
 
-      <input placeholder="Name" onChange={(e) => setName(e.target.value)} />
+        <input
+          type="text"
+          placeholder="Full Name"
+          onChange={(e) => setName(e.target.value)}
+        />
 
-      <input placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
+        <input
+          type="email"
+          placeholder="Email"
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
-      <input
-        placeholder="Password"
-        type="password"
-        onChange={(e) => setPassword(e.target.value)}
-      />
+        <input
+          type="password"
+          placeholder="Password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-      <button onClick={() => signup()}>Signup</button>
+        <button className="signup-btn" onClick={signup}>
+          Create Account
+        </button>
 
-      <hr />
+        <div className="divider"></div>
 
-      <h2>Login</h2>
-
-      <button onClick={login}>Login</button>
+        {/* <button className="login-btn" onClick={login}>
+          Login
+        </button> */}
+      </div>
     </div>
   );
 }

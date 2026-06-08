@@ -34,7 +34,7 @@ export default function Nav() {
         </div>
 
         <div className="nav-buttons">
-          <button className="login-btn" onClick={() => navigate("/auth")}>
+          <button className="login-btn" onClick={() => navigate("/auth/login")}>
             Login
           </button>
 
