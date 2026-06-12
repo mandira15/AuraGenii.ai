@@ -7,32 +7,38 @@ export default function HowItWorks() {
   const [generatedImage, setGeneratedImage] = useState("");
   const [loading, setLoading] = useState(false);
   const handleGenerate = async () => {
-    try {
-      setLoading(true);
+  try {
+    setLoading(true);
 
-      const token = localStorage.getItem("token");
+    const token = localStorage.getItem("token");
 
-      const res = await axios.post(
-        "http://localhost:5000/api/designs/generate",
-        {
-          prompt,
-          category: "Custom",
-          style: "AI Generated",
+    const res = await axios.post(
+      "http://localhost:5000/api/designs/generate",
+      {
+        prompt,
+        category: "Custom",
+        style: "AI Generated",
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
         },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        },
-      );
+      }
+    );
 
-      setGeneratedImage(res.data.generatedImage);
-    } catch (error) {
-      console.log(error.response?.data || error.message);
-    } finally {
-      setLoading(false);
-    }
-  };
+    setGeneratedImage(res.data.generatedImage);
+
+  } catch (error) {
+
+    console.log(error.response?.data || error.message);
+
+  } finally {
+
+    setLoading(false);
+
+  }
+};
+
   return (
     <div className="how-page">
       {/* HEADER */}
