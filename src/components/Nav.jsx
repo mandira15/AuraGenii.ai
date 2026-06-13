@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
+import logo from "../assets/Gemini_Generated_Image_wjc261wjc261wjc2.png";
 
 export default function Nav() {
   const [show, setShow] = useState(true);
@@ -23,7 +24,9 @@ export default function Nav() {
   return (
     <nav className={`navbar ${show ? "nav-show" : "nav-hide"}`}>
       <div className="nav-container">
-        <div className="logo">AuraGenie.AI</div>
+        <div className="nav-logo">
+          <img src={logo} alt="AuraGenie Logo" className="logo-img" />
+        </div>
 
         <div className="nav-links">
           <Link to="/">Home</Link>
