@@ -1,6 +1,7 @@
 import "./Order.css";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import axios from "axios";
 
 export default function Order() {
   const location = useLocation();
@@ -22,15 +23,26 @@ export default function Order() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log({
-      tailor,
-      ...formData,
-    });
+    try {
+      await axios.post("http://localhost:5000/api/orders", {
+        customerName: formData.name,
+        phone: formData.phone,
+        address: formData.address,
+        measurements: formData.measurements,
+        deliveryDate: formData.deliveryDate,
+        instructions: formData.instructions,
+        tailorName: tailor?.name,
+      });
 
-    alert("Order Placed Successfully!");
+      alert("Order Placed Successfully!");
+    } catch (error) {
+      console.log(error);
+
+      alert("Failed to place order");
+    }
   };
 
   return (
@@ -38,9 +50,7 @@ export default function Order() {
       <div className="order-card">
         <h1>Place Your Order</h1>
 
-        <p>
-          Fill in your details and connect with your selected tailor.
-        </p>
+        <p>Fill in your details and connect with your selected tailor.</p>
 
         {tailor && (
           <div className="selected-tailor">
@@ -112,9 +122,7 @@ export default function Order() {
             onChange={handleChange}
           />
 
-          <button type="submit">
-            Place Order
-          </button>
+          <button type="submit">Place Order</button>
         </form>
       </div>
     </div>
