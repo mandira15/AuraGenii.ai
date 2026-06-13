@@ -1,43 +1,40 @@
 import "./HowItWorks.css";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function HowItWorks() {
   const [prompt, setPrompt] = useState("");
   const [generatedImage, setGeneratedImage] = useState("");
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
   const handleGenerate = async () => {
-  try {
-    setLoading(true);
+    try {
+      setLoading(true);
 
-    const token = localStorage.getItem("token");
+      const token = localStorage.getItem("token");
 
-    const res = await axios.post(
-      "http://localhost:5000/api/designs/generate",
-      {
-        prompt,
-        category: "Custom",
-        style: "AI Generated",
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
+      const res = await axios.post(
+        "http://localhost:5000/api/designs/generate",
+        {
+          prompt,
+          category: "Custom",
+          style: "AI Generated",
         },
-      }
-    );
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      );
 
-    setGeneratedImage(res.data.generatedImage);
-
-  } catch (error) {
-
-    console.log(error.response?.data || error.message);
-
-  } finally {
-
-    setLoading(false);
-
-  }
-};
+      setGeneratedImage(res.data.generatedImage);
+    } catch (error) {
+      console.log(error.response?.data || error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="how-page">
@@ -97,7 +94,18 @@ export default function HowItWorks() {
             {loading && <p>Generating design...</p>}
 
             {!loading && generatedImage && (
-              <img src={generatedImage} alt="Generated Design" width="350" />
+              <>
+                <img src={generatedImage} alt="Generated Design" width="350" />
+
+                <br />
+
+                <button
+                  className="tailor-btn"
+                  onClick={() => navigate("/tailors")}
+                >
+                  Select Tailor
+                </button>
+              </>
             )}
           </div>
         </div>

@@ -1,0 +1,83 @@
+.order-page {
+  min-height: 100vh;
+  background: #f7f2ea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.order-card {
+  width: 100%;
+  max-width: 700px;
+
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(20px);
+
+  border-radius: 24px;
+
+  padding: 40px;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.order-card h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.order-card p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.order-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.order-card input,
+.order-card textarea {
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+}
+
+.order-card textarea {
+  min-height: 100px;
+}
+
+.order-card button {
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #c6a972;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.order-card button:hover {
+  background: #b2935b;
+}
+
+.selected-tailor {
+  background: rgba(255,255,255,0.7);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 25px;
+  border: 1px solid #e5e5e5;
+}
+
+.selected-tailor h2 {
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.selected-tailor p {
+  margin-bottom: 8px;
+  color: #555;
+}

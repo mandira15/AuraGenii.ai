@@ -1,4 +1,5 @@
 import "./Tailors.css";
+import { useNavigate } from "react-router-dom";
 
 const tailors = [
   {
@@ -52,22 +53,20 @@ const tailors = [
 ];
 
 export default function Tailors() {
+  const navigate = useNavigate();
   return (
     <div className="tailors-page">
-
       <div className="tailors-header">
         <h1>Choose Your Tailor</h1>
         <p>
-          Connect with skilled tailors and bring your AI-generated
-          fashion designs to life.
+          Connect with skilled tailors and bring your AI-generated fashion
+          designs to life.
         </p>
       </div>
 
       <div className="tailors-grid">
-
         {tailors.map((tailor) => (
           <div key={tailor.id} className="tailor-card">
-
             <img
               src={tailor.image}
               alt={tailor.name}
@@ -75,7 +74,6 @@ export default function Tailors() {
             />
 
             <div className="tailor-info">
-
               <h3>{tailor.name}</h3>
 
               <p>
@@ -83,26 +81,29 @@ export default function Tailors() {
               </p>
 
               <p>
-                ✂️ <strong>Speciality:</strong>{" "}
-                {tailor.speciality}
+                ✂️ <strong>Speciality:</strong> {tailor.speciality}
               </p>
 
               <p>
-                ⭐ <strong>Rating:</strong>{" "}
-                {tailor.rating}
+                ⭐ <strong>Rating:</strong> {tailor.rating}
               </p>
 
-              <button className="book-btn">
+              <button
+                className="book-btn"
+                onClick={() =>
+                  navigate("/order", {
+                    state: {
+                      tailor,
+                    },
+                  })
+                }
+              >
                 Book Tailor
               </button>
-
             </div>
-
           </div>
         ))}
-
       </div>
-
     </div>
   );
 }

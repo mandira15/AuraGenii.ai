@@ -7,6 +7,7 @@ import Tailors from "./pages/Tailors.jsx";
 import About from "./pages/About.jsx";
 import AuthPage from "./pages/AuthPage.jsx";
 import Login from "./pages/Login.jsx";
+import Order from "./pages/Order";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/auth/login" element={<Login />} />
         <Route path="/auth" element={<AuthPage />} />
+        <Route path="/order" element={<Order />} />
       </Routes>
       
 
