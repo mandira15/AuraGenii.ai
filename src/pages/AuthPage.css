@@ -82,3 +82,9 @@
 
   background: #ddd;
 }
+
+.role-selection{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
