@@ -22,18 +22,28 @@ export default function AuthPage() {
 
   const signup = async () => {
     try {
-      const res = await registerUser({
+      if (!name || !email || !password) {
+        alert("Please fill all required fields.");
+        return;
+      }
+
+      const data = {
         name,
         email,
         password,
         role,
-        shopName,
-        phone,
-        city,
-        address,
-        experience,
-        specialization,
-      });
+      };
+
+      if (role === "tailor") {
+        data.shopName = shopName;
+        data.phone = phone;
+        data.city = city;
+        data.address = address;
+        data.experience = experience;
+        data.specialization = specialization;
+      }
+
+      const res = await registerUser(data);
 
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("role", res.data.role);
@@ -55,10 +65,10 @@ export default function AuthPage() {
     <div className="auth-container">
       <div className="auth-card">
         <h1>AuraGenie AI</h1>
-
         <p>Create your account and start designing</p>
 
         {/* Role Selection */}
+
         <div className="role-selection">
           <label>
             <input
@@ -145,10 +155,14 @@ export default function AuthPage() {
 
             <input
               type="text"
-              placeholder="Specialization"
+              placeholder="Specialization (e.g. Bridal, Men's Wear)"
               value={specialization}
               onChange={(e) => setSpecialization(e.target.value)}
             />
+
+            <small style={{ color: "#777" }}>
+              A professional profile avatar will be assigned automatically.
+            </small>
           </>
         )}
 
