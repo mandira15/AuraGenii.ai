@@ -11,9 +11,9 @@
 }
 
 .how-header p {
-  color: #C6A972;
+  color: #796e5f;
   margin-top: 10px;
-  opacity: 0.8;
+  opacity: 0.9;
   font-size: 18px;
 }
 
@@ -27,6 +27,14 @@
 .step-card {
   background: rgba(255,255,255,0.05);
   padding: 25px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+
+.step-card p{
+  color: #796e5f;
+  padding: 15px;
   border-radius: 16px;
   backdrop-filter: blur(10px);
   transition: 0.3s;
@@ -47,13 +55,13 @@
   border: 2px solid  #C4B9AA;
   border-radius: 18px;
   color : white;
-  background-color:#C4B9AA;
+  background-color:#574a37;
 }
 
 .ai-box {
   margin-top: 30px;
   padding: 30px;
-  background: #C4B9AA;
+  background: 	#796e5f;
   border-radius: 18px;
   backdrop-filter: blur(16px);
 }
@@ -61,7 +69,7 @@
 textarea {
   width: 100%;
   height: 120px;
-  background: rgba(255,255,255,0.06);
+  background: #9a9287;
   border: 1px solid #aaa3;
   padding: 15px;
   border-radius: 12px;
@@ -121,4 +129,39 @@ textarea {
 
 .tailor-btn:hover {
   background: #b2935b;
+}
+
+.beta-banner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(135deg, #fff8e8, #fff2cc);
+  border: 1px solid #f2d675;
+  border-left: 6px solid #f4b400;
+  padding: 20px 24px;
+  border-radius: 14px;
+  margin: 30px auto;
+  max-width: 1100px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.beta-tag {
+  background: #f4b400;
+  color: white;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 50px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.beta-content h3 {
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.beta-content p {
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
 }

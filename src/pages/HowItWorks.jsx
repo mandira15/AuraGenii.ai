@@ -44,6 +44,22 @@ export default function HowItWorks() {
         <p>From imagination to a fully stitched outfit — powered by AI.</p>
       </div>
 
+      {/* BETA NOTICE */}
+      <div className="beta-banner">
+        <span className="beta-tag">🚧 BETA</span>
+
+        <div className="beta-content">
+          <h3>AI Outfit Generation is Currently Under Development</h3>
+
+          <p>
+            AuraGenie is continuously evolving. Our AI-powered outfit
+            visualization is currently in <strong>Beta</strong> and is being
+            refined to deliver higher-quality, more personalized fashion
+            designs. Stay tuned for an enhanced experience in upcoming updates.
+          </p>
+        </div>
+      </div>
+
       {/* 3 STEP SECTION */}
       <div className="steps-section">
         <div className="step-card">

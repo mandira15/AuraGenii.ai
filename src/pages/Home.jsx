@@ -1,8 +1,11 @@
 import AIMockUps from "../components/AIMockUps.jsx";
 import Navbar from "../components/Nav.jsx";
 import "./Home.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+  const navigate = useNavigate();
+
   return (
     <div className="home-page">
 
@@ -19,7 +22,7 @@ export default function Home() {
           creativity, and futuristic style.
         </p>
 
-        <button className="hero-btn">
+        <button className="hero-btn" onClick={() => navigate("/auth")}>
           Get Started
         </button>
 

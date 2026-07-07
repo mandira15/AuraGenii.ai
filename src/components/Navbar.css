@@ -141,31 +141,38 @@
 /* Login Button */
 
 .login-btn {
+  background: #C6A972;
 
-  background: transparent;
+  color: #ffffff;
 
-  color: #1b1a1a;
-
-  border: 1px solid rgba(198, 169, 114, 0.5);
-
-  padding: 10px 22px;
+  padding: 11px 24px;
 
   border-radius: 999px;
 
-  font-size: 14px;
+  border: none;
+
+  font-size: 8px;
+
+  font-weight: 50;
+
+  letter-spacing: 0.3px;
 
   cursor: pointer;
 
   transition: all 0.35s ease;
+
+  box-shadow:
+    0 8px 24px rgba(198, 169, 114, 0.18);
 }
 
 .login-btn:hover {
+  transform: translateY(-2px);
 
-  background: rgba(198, 169, 114, 0.12);
+  background: #B8945F;
 
-  border-color: #C6A972;
-
-  color: #C6A972;
+  box-shadow:
+    0 12px 30px rgba(198, 169, 114, 0.28);
+  
 }
 
 /* Start Designing Button */
@@ -230,6 +237,6 @@
 
     padding: 9px 18px;
 
-    font-size: 13px;
+    font-size: 10px;
   }
 }

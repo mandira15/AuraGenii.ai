@@ -35,19 +35,43 @@ const designs = [
     id: 6,
     title: "Modern Dress",
     category: "Women",
-    image: "/gallery/dress1.jpg",
+    image: "/gallery/moderndress1.jpg",
   },
   {
     id: 7,
     title: "Casual Dress",
     category: "Men",
-    image: "/gallery/dress1.jpg",
+    image: "/gallery/casualdress1.jpg",
   },
   {
     id: 8,
     title: "Ethnic Dress",
     category: "Women",
-    image: "/gallery/dress1.jpg",
+    image: "/gallery/ethnicdress1.jpg",
+  },
+  {
+    id: 9,
+    title: "Ethnic Dress",
+    category: "Boys",
+    image: "/gallery/kidsdress1.jpg",
+  },
+  {
+    id: 10,
+    title: "Ethnic Dress",
+    category: "Girls",
+    image: "/gallery/kidsdress2.jpg",
+  },
+  {
+    id: 11,
+    title: "Ethnic Dress",
+    category: "Elderly Women",
+    image: "/gallery/ethnicdress2.jpg",
+  },
+  {
+    id: 12,
+    title: "Ethnic Dress",
+    category: "Elderly Men",
+    image: "/gallery/ethnicdress3.jpg",
   },
 ];
 
