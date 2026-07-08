@@ -1,66 +1,66 @@
-/* ========== NAVBAR MAIN ========== */
-
+/* ========== NAVBAR ========== */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
 .navbar {
-
   width: 100%;
-
   position: sticky;
   top: 0;
   z-index: 100;
 
-  background: #E7E3DD;
+  background: #e7e3dd;
 
-  -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 
   transition: all 0.35s ease;
 }
 
-/* Hide / Show on Scroll */
-
 .nav-hide {
-
   transform: translateY(-100%);
 }
 
 .nav-show {
-
   transform: translateY(0);
 }
 
-/* ========== NAV CONTAINER ========== */
+/* ========== CONTAINER ========== */
 
 .nav-container {
+  width: 100%;
+  max-width: 1500px;
 
-  max-width: 1280px;
+  margin: 0 auto;
 
-  margin: auto;
+  padding: 10px 40px;
 
-  padding: 18px 42px;
+  display: grid;
 
-  display: flex;
+  grid-template-columns: 220px 1fr 260px;
 
   align-items: center;
-
-  justify-content: space-between;
 }
 
 /* ========== LOGO ========== */
 
 .nav-logo {
   display: flex;
+
+  justify-content: flex-start;
+
   align-items: center;
+
   cursor: pointer;
 }
 
 .logo-img {
-  height: 55px;
+  height: 70px;
+
   width: auto;
-  border-radius: 25%;
-  object-fit: contain;
-  transition: transform 0.3s ease;
+
+  border-radius: 18px;
+
+  transition: 0.3s;
 }
 
 .logo-img:hover {
@@ -70,173 +70,140 @@
 /* ========== NAV LINKS ========== */
 
 .nav-links {
-
   display: flex;
+
+  justify-content: center;
 
   align-items: center;
 
-  gap: 34px;
+  gap: 48px;
 }
 
 .nav-links a {
-
   text-decoration: none;
 
-  color: rgba(23, 23, 23, 0.88);
+  color: #222;
 
-  font-size: 15px;
+  font-size: 25px;
 
-  font-weight: 500;
+  font-weight: 600;
 
-  letter-spacing: 0.4px;
+  letter-spacing: 0.3px;
 
   position: relative;
 
-  transition: all 0.3s ease;
+  transition: 0.3s;
+
+  font-family: "Cormorant Garamond", serif;
 }
 
-/* Elegant Underline Hover */
-
 .nav-links a::after {
-
   content: "";
 
   position: absolute;
 
   left: 0;
+
   bottom: -8px;
 
-  width: 0%;
+  width: 0;
 
-  height: 1.5px;
+  height: 2px;
 
-  border-radius: 10px;
+  background: #c6a972;
 
-  background: #C6A972;
-
-  transition: all 0.35s ease;
+  transition: 0.35s;
 }
 
 .nav-links a:hover {
-
-  color: #C6A972;
+  color: #c6a972;
 }
 
 .nav-links a:hover::after {
-
   width: 100%;
 }
 
 /* ========== BUTTONS ========== */
 
 .nav-buttons {
-
   display: flex;
+
+  justify-content: flex-end;
 
   align-items: center;
 
-  gap: 16px;
+  gap: 18px;
 }
 
-/* Login Button */
-
-.login-btn {
-  background: #C6A972;
-
-  color: #ffffff;
-
-  padding: 11px 24px;
-
-  border-radius: 999px;
-
-  border: none;
-
-  font-size: 8px;
-
-  font-weight: 50;
-
-  letter-spacing: 0.3px;
-
-  cursor: pointer;
-
-  transition: all 0.35s ease;
-
-  box-shadow:
-    0 8px 24px rgba(198, 169, 114, 0.18);
-}
-
-.login-btn:hover {
-  transform: translateY(-2px);
-
-  background: #B8945F;
-
-  box-shadow:
-    0 12px 30px rgba(198, 169, 114, 0.28);
-  
-}
-
-/* Start Designing Button */
-
+.login-btn,
 .start-btn {
+  background: #c6a972;
 
-  background: #C6A972;
-
-  color: #ffffff;
-
-  padding: 11px 24px;
-
-  border-radius: 999px;
+  color: white;
 
   border: none;
 
-  font-size: 14px;
+  border-radius: 999px;
 
-  font-weight: 500;
+  padding: 13px 28px;
 
-  letter-spacing: 0.3px;
+  font-size: 17px;
+
+  font-weight: 600;
 
   cursor: pointer;
 
-  transition: all 0.35s ease;
+  transition: 0.3s;
 
-  box-shadow:
-    0 8px 24px rgba(198, 169, 114, 0.18);
+  box-shadow: 0 8px 24px rgba(198, 169, 114, 0.18);
 }
 
+.login-btn:hover,
 .start-btn:hover {
-
   transform: translateY(-2px);
 
-  background: #B8945F;
+  background: #b8945f;
 
-  box-shadow:
-    0 12px 30px rgba(198, 169, 114, 0.28);
+  box-shadow: 0 12px 30px rgba(198, 169, 114, 0.28);
 }
 
 /* ========== RESPONSIVE ========== */
 
-@media (max-width: 900px) {
-
+@media (max-width: 1100px) {
   .nav-container {
+    grid-template-columns: 170px 1fr 210px;
 
-    padding: 16px 22px;
+    padding: 16px 20px;
+  }
+
+  .logo-img {
+    height: 58px;
   }
 
   .nav-links {
-
-    gap: 18px;
+    gap: 28px;
   }
 
-  .nav-logo {
-
-    font-size: 24px;
+  .nav-links a {
+    font-size: 17px;
   }
 
   .login-btn,
   .start-btn {
+    padding: 20px 20px;
 
-    padding: 9px 18px;
+    font-size: 25px;
+  }
+}
 
-    font-size: 10px;
+@media (max-width: 900px) {
+  .nav-container {
+    display: flex;
+
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    display: none;
   }
 }

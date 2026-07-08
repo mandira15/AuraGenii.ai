@@ -56,6 +56,7 @@ export default function About() {
         <div className="contact-card">
           <p>
             📧 <strong>Email: </strong>
+              auragenie.ai@gmail.com
               mandirasingh15@outlook.com
           </p>
 

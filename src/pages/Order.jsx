@@ -1,16 +1,22 @@
 import "./Order.css";
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function Order() {
   const location = useLocation();
+  const navigate = useNavigate();
+
   const tailor = location.state?.tailor;
 
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     address: "",
+    outfitType: "",
+    occasion: "",
+    budget: "",
+    fabric: "",
     measurements: "",
     deliveryDate: "",
     instructions: "",
@@ -26,38 +32,66 @@ export default function Order() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!tailor) {
+      alert("Please select a tailor first.");
+      navigate("/tailors");
+      return;
+    }
+
     try {
       await axios.post("http://localhost:5000/api/orders", {
+        tailorId: tailor._id,
+        tailorName: tailor.user?.name,
+        tailorEmail: tailor.user?.email,
+
         customerName: formData.name,
         phone: formData.phone,
         address: formData.address,
+
+        outfitType: formData.outfitType,
+        occasion: formData.occasion,
+        budget: formData.budget,
+        fabric: formData.fabric,
+
         measurements: formData.measurements,
         deliveryDate: formData.deliveryDate,
         instructions: formData.instructions,
-        tailorName: tailor?.name,
       });
 
-      alert("Order Placed Successfully!");
-    } catch (error) {
-      console.log(error);
+      alert(
+        "🎉 Your stitching request has been sent successfully! The tailor will contact you soon."
+      );
 
-      alert("Failed to place order");
+      navigate("/tailors");
+    } catch (error) {
+      console.error(error);
+
+      alert("Failed to send your request. Please try again.");
     }
   };
 
   return (
     <div className="order-page">
       <div className="order-card">
-        <h1>Place Your Order</h1>
+        <h1>Request Custom Stitching</h1>
 
-        <p>Fill in your details and connect with your selected tailor.</p>
+        <p>
+          Share your requirements with your selected tailor and begin your
+          customization journey.
+        </p>
 
         {tailor && (
           <div className="selected-tailor">
             <h2>Selected Tailor</h2>
 
             <p>
-              <strong>Name:</strong> {tailor.name}
+              <strong>Name:</strong>{" "}
+              {tailor.user?.name || "Unknown Tailor"}
+            </p>
+
+            <p>
+              <strong>Studio:</strong>{" "}
+              {tailor.shopName || "Independent Tailor"}
             </p>
 
             <p>
@@ -65,11 +99,19 @@ export default function Order() {
             </p>
 
             <p>
-              <strong>Speciality:</strong> {tailor.speciality}
+              <strong>Specialization:</strong>{" "}
+              {tailor.specialization?.length
+                ? tailor.specialization.join(", ")
+                : "Custom Stitching"}
             </p>
 
             <p>
-              <strong>Rating:</strong> ⭐ {tailor.rating}
+              <strong>Experience:</strong>{" "}
+              {tailor.experience || 0} Years
+            </p>
+
+            <p>
+              <strong>Rating:</strong> ⭐ {tailor.rating || "New"}
             </p>
           </div>
         )}
@@ -95,10 +137,44 @@ export default function Order() {
 
           <textarea
             name="address"
-            placeholder="Delivery Address"
+            placeholder="Address"
             value={formData.address}
             onChange={handleChange}
             required
+          />
+
+          <input
+            type="text"
+            name="outfitType"
+            placeholder="Outfit Type (Lehenga, Suit, Kurta, Sherwani...)"
+            value={formData.outfitType}
+            onChange={handleChange}
+            required
+          />
+
+          <input
+            type="text"
+            name="occasion"
+            placeholder="Occasion (Wedding, Office, Party...)"
+            value={formData.occasion}
+            onChange={handleChange}
+            required
+          />
+
+          <input
+            type="text"
+            name="budget"
+            placeholder="Estimated Budget"
+            value={formData.budget}
+            onChange={handleChange}
+          />
+
+          <input
+            type="text"
+            name="fabric"
+            placeholder="Preferred Fabric (Cotton, Silk, Linen...)"
+            value={formData.fabric}
+            onChange={handleChange}
           />
 
           <textarea
@@ -117,12 +193,15 @@ export default function Order() {
 
           <textarea
             name="instructions"
-            placeholder="Special Instructions"
+            placeholder="Describe your design requirements, embroidery, color preferences, reference ideas, etc."
             value={formData.instructions}
             onChange={handleChange}
+            rows="5"
           />
 
-          <button type="submit">Place Order</button>
+          <button type="submit">
+            Send Stitching Request
+          </button>
         </form>
       </div>
     </div>
