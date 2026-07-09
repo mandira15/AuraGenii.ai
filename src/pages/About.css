@@ -10,9 +10,10 @@
 }
 
 .about-hero h1 {
-  font-size: 3rem;
-  color: #222;
-  margin-bottom: 20px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 60px;
+  font-weight: 600;
+  color: var(--text-dark);
 }
 
 .about-hero p {
@@ -43,8 +44,10 @@
 }
 
 .about-card h2 {
-  margin-bottom: 15px;
-  color: #222;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--text-dark);
 }
 
 .about-card p {
@@ -55,11 +58,14 @@
 .contact-section {
   margin-top: 70px;
   text-align: center;
+  
 }
 
 .contact-section h2 {
   margin-bottom: 15px;
   color: #222;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 28px;
 }
 
 .contact-section p {
@@ -86,4 +92,99 @@
   
   margin-bottom: 12px;
   color: #C6A972;
+  display: flex;
+  align-items: start;
+  gap: 10px;
+
+}
+
+/* ================= SOCIAL SECTION ================= */
+
+.social-section {
+
+  margin-top: 40px;
+
+  text-align: center;
+}
+
+.social-section h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 28px;
+
+  margin-bottom: 22px;
+
+  color: var(--text-dark);
+}
+
+.social-links {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 20px;
+
+  flex-wrap: wrap;
+}
+
+.social-btn {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-decoration: none;
+
+  color: #fff;
+
+  background: #C6A972;
+
+  padding: 12px 28px;
+
+  border-radius: 999px;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+
+  box-shadow: 0 8px 24px rgba(198,169,114,.18);
+}
+
+.social-btn:hover {
+
+  background: #B8945F;
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 12px 30px rgba(198,169,114,.28);
+}
+
+@media (max-width:768px){
+
+  .social-links{
+
+    flex-direction: column;
+
+    gap: 14px;
+  }
+
+  .social-btn{
+
+    width: 230px;
+  }
+
+}
+.social-note{
+
+  margin-top:18px;
+
+  color:var(--text-light);
+
+  font-size:15px;
 }

@@ -1,4 +1,7 @@
 .gallery-page {
+  font-family: "Cormorant Garamond", serif;
+  
+  font-weight: 600;
   padding: 40px;
   background: #f7f2ea;
   min-height: 100vh;
@@ -42,6 +45,7 @@
 
 .gallery-card h3 {
   padding: 15px 15px 5px;
+  font-size: 1.2rem;
 }
 
 .gallery-card p {

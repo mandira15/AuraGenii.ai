@@ -56,18 +56,43 @@ export default function About() {
         <div className="contact-card">
           <p>
             📧 <strong>Email: </strong>
-              auragenie.ai@gmail.com
-              mandirasingh15@outlook.com
+            auragenie.ai@gmail.com , mandirasingh15@outlook.com
           </p>
 
           <p>
             🌐 <strong>Platform: </strong>
-              AuraGenie.AI
+            AuraGenie.AI
           </p>
 
           <p>
             📍 <strong>Location: </strong>
-              Bhopal, India
+            Bhopal, India
+          </p>
+        </div>
+        <div className="social-section">
+          <h3>Follow AuraGenie</h3>
+
+          <div className="social-links">
+            <a
+              href="https://x.com/auragenie_ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-btn"
+            >
+              𝕏 @auragenie_ai
+            </a>
+
+            <a
+              href="https://instagram.com/auragenie.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-btn"
+            >
+              📷 auragenie.ai
+            </a>
+          </div>
+          <p className="social-note">
+            Follow our journey as we build AuraGenie.AI.
           </p>
         </div>
       </div>
