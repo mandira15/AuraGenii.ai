@@ -83,12 +83,12 @@ export default function About() {
             </a>
 
             <a
-              href="https://instagram.com/auragenie.ai"
+              href="https://www.instagram.com/auragenie.ai.india/"
               target="_blank"
               rel="noopener noreferrer"
               className="social-btn"
             >
-              📷 auragenie.ai
+              📸 auragenie.ai.india
             </a>
           </div>
           <p className="social-note">
