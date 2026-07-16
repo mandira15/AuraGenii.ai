@@ -1,35 +1,175 @@
-# AuraGenii.ai
-**Hey everyone! I am building an ecommerce web application which will bring Imagination to Reality — powered by Generative AI and Local Craftsmanship.**
-# Overview:
-  *  This platform bridges the gap between customer imagination and artistic craftsmanship. 
-  *  Customers describe, draw, or upload their ideas.
-  *  Generative AI transforms these inputs into custom product designs (clothing).
-  *  Nearby craftsmen and artists receive the design and bring it to life.
-  *  It’s not just an e-commerce site — it’s a co-creation ecosystem where technology + tradition meet.
-# Features:
-*🖌 GenAI Design Studio: Generate designs from text prompts, sketches, or images.* <br/>
-*👕 Virtual Try-On: AR-based preview before ordering.*<br/>
-*🤝 Local Craftsmen Integration: AI routes designs to verified nearby artists.*<br/>
-*🔐 Blockchain-Backed Ownership (Future): Customers retain design IP with smart contracts.*<br/>
-*🛒 Seamless E-Commerce: Order, track, and review handcrafted products.*<br/>
-# Tech Stack:
-**1)Frontend-**
-*React + Tailwind CSS*<br/>
-*Vite for fast bundling*<br/>
-Augmented Reality integration<br/>
-**2)Backend-**
-*Node.js + Express (REST APIs)*<br/>
-*SQL*<br/>
-*Redis (for design request queues)*<br/>
-**3)AI Layer-**
-*Pytorch,Hugging face, transformers, OpenCV (image generation)*<br/>
-*Custom ML models (fashion + craft fine-tuned)*<br/>
-**4)AR try-on module**<br/>
-**5)Deployment on  Azure**<br/>
-**6)Future: Blockchain layer**<br/>
-# How It Works:
-*1)Customer Input: Upload image/sketch OR type imagination prompt.*<br/>
-*2)GenAI Engine: Generates multiple design variations.*<br/>
-*3)Preview & Customization: AR try-on or style modifications.*<br/>
-*4)Craftsman Selection: AI suggests nearby artisans based on skill & location.*<br/>
-*5)Order Fulfillment: Secure payment, order tracking, and delivery.*<br/>
+# ✨ AuraGenie.ai
+
+### AI-Powered Tailor Discovery & Custom Clothing Platform
+
+AuraGenie is a full-stack web application that connects customers with skilled local tailors. Users can upload clothing designs or describe their ideas using AI assistance, discover verified tailors, place custom stitching orders, and track their order progress—all from a single platform.
+
+> **Current Version (V1):** AI-assisted tailor marketplace for custom clothing.
+
+---
+
+## 🚀 Features
+
+- 👤 User & Tailor Authentication
+- 🧵 Tailor Registration & Profile Management
+- 🎨 AI-Assisted Clothing Design (Beta)
+- 📸 Upload Custom Clothing Designs
+- 🔍 Browse Verified Tailors
+- 📝 Place Custom Stitching Orders
+- 📦 Order Status Tracking
+- 📧 Email Notifications
+- 📱 Fully Responsive User Interface
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- React.js
+- Vite
+- CSS3
+- React Router DOM
+
+### Backend
+- Node.js
+- Express.js
+
+### Database
+- MongoDB Atlas
+- Mongoose
+
+### Authentication
+- JWT Authentication
+- bcrypt.js
+
+### AI Integration
+- Google Gemini API *(Beta)*
+
+### Email Service
+- Nodemailer
+
+### Deployment
+- Frontend: Vercel
+- Backend: Render
+- Database: MongoDB Atlas
+
+---
+
+## 📂 Project Structure
+
+```text
+AuraGenie/
+│
+├── client/              # React Frontend
+├── server/              # Express Backend
+├── README.md
+└── package.json
+```
+
+---
+
+## ⚙️ How It Works
+
+1. Register as a Customer or Tailor.
+2. Browse verified tailors.
+3. Upload a clothing design or generate one using AI.
+4. Select a tailor and place a stitching request.
+5. Tailor reviews and accepts the order.
+6. Receive email updates and track your order status.
+
+---
+
+## 🌟 Future Roadmap
+
+- 💬 Real-time Chat
+- 🏠 Home Measurement Service
+- 🚚 Fabric Pickup & Delivery
+- 💳 Secure Online Payments
+- ⭐ Ratings & Reviews
+- 📍 Nearby Tailor Recommendations
+- 📅 Appointment Booking
+- 🤖 Advanced AI Design Generation
+
+---
+
+## 📸 Screenshots
+
+> Screenshots will be added after deployment.
+
+- Home Page
+- Tailor Listing
+- Authentication
+- AI Design Generation
+- Order Placement
+- Dashboard
+
+---
+
+## 🚀 Installation
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/<your-username>/AuraGenie.git
+cd AuraGenie
+```
+
+### Frontend Setup
+
+```bash
+cd client
+npm install
+npm run dev
+```
+
+### Backend Setup
+
+```bash
+cd server
+npm install
+npm run dev
+```
+
+### Environment Variables
+
+Create a `.env` file inside the **server** directory and add:
+
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+EMAIL_USER=your_email
+EMAIL_PASS=your_app_password
+GEMINI_API_KEY=your_gemini_api_key
+```
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to fork the repository and submit a pull request.
+
+---
+
+## 👩‍💻 Developer
+
+**Mandira Singh**
+
+B.Tech Computer Science & Engineering  
+VIT Bhopal University
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+## ⭐ Support
+
+If you like this project, consider giving it a **⭐ Star** on GitHub!
+
+It helps others discover the project and motivates future development.
