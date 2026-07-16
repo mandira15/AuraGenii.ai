@@ -79,16 +79,58 @@ AuraGenie/
 
 ---
 
-## 🌟 Future Roadmap
+## 🏗️ Architecture
 
-- 💬 Real-time Chat
-- 🏠 Home Measurement Service
-- 🚚 Fabric Pickup & Delivery
-- 💳 Secure Online Payments
-- ⭐ Ratings & Reviews
-- 📍 Nearby Tailor Recommendations
-- 📅 Appointment Booking
-- 🤖 Advanced AI Design Generation
+```text
+                        AuraGenie.ai Architecture
+
+                           ┌────────────────────┐
+                           │      Customer      │
+                           └─────────┬──────────┘
+                                     │
+                                     ▼
+                         ┌────────────────────────┐
+                         │   React + Vite Client  │
+                         │   (Frontend UI)        │
+                         └─────────┬──────────────┘
+                                   │ REST API
+                                   ▼
+                      ┌────────────────────────────┐
+                      │   Node.js + Express API    │
+                      │     (Backend Server)       │
+                      └──────┬───────────┬─────────┘
+                             │           │
+                  JWT Auth   │           │ Email Notifications
+                             │           ▼
+                             │    Nodemailer (Gmail)
+                             │
+                             ▼
+                    MongoDB Atlas Database
+          ┌──────────────────┼──────────────────┐
+          │                  │                  │
+          ▼                  ▼                  ▼
+       Users             Tailors            Orders
+                                              │
+                                              ▼
+                                   Order Status Tracking
+
+                AI Design Assistant (Google Gemini API)
+                           ▲
+                           │
+               User Prompt / Design Request
+```
+
+### Workflow
+
+1. Users register as **Customers** or **Tailors**.
+2. Customers browse verified tailors.
+3. Customers upload a clothing design or generate one using **Google Gemini AI (Beta)**.
+4. The frontend sends requests to the **Express.js REST API**.
+5. The backend authenticates users using **JWT**.
+6. User, Tailor, and Order data are stored in **MongoDB Atlas**.
+7. Email notifications are sent through **Nodemailer**.
+8. Customers can track the status of their stitching orders until completion.
+
 
 ---
 
