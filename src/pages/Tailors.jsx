@@ -2,6 +2,7 @@ import "./Tailors.css";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import api from "../api/api";
 
 export default function Tailors() {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ export default function Tailors() {
   useEffect(() => {
     const fetchTailors = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/tailors");
+        const res = await axios.get("/api/tailors");
         setTailors(res.data);
       } catch (error) {
         console.error("Error fetching tailors:", error);

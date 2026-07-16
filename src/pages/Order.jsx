@@ -2,6 +2,8 @@ import "./Order.css";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
+import api from "../api/api";
+
 
 export default function Order() {
   const location = useLocation();
@@ -39,7 +41,7 @@ export default function Order() {
     }
 
     try {
-      await axios.post("http://localhost:5000/api/orders", {
+      await api.post("/api/orders", {
         tailorId: tailor._id,
         tailorName: tailor.user?.name,
         tailorEmail: tailor.user?.email,
