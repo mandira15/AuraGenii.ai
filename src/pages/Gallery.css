@@ -1,10 +1,14 @@
 .gallery-page {
   font-family: "Cormorant Garamond", serif;
-  
   font-weight: 600;
+
   padding: 40px;
+
   background: #f7f2ea;
+
   min-height: 100vh;
+
+  box-sizing: border-box;
 }
 
 .gallery-page h1 {
@@ -14,6 +18,7 @@
 
 .gallery-grid {
   display: grid;
+
   grid-template-columns:
     repeat(auto-fit, minmax(280px, 1fr));
 
@@ -30,6 +35,8 @@
   box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 
   transition: 0.3s;
+
+  min-width: 0;
 }
 
 .gallery-card:hover {
@@ -38,17 +45,85 @@
 
 .gallery-card img {
   width: 100%;
+
   height: 320px;
+
   object-fit: contain;
+
   background: #f7f2ea;
+
+  display: block;
 }
 
 .gallery-card h3 {
   padding: 15px 15px 5px;
+
   font-size: 1.2rem;
 }
 
 .gallery-card p {
   padding: 0 15px 15px;
+
   color: #777;
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+  .gallery-page {
+    padding: 30px 20px;
+  }
+
+  .gallery-page h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .gallery-card img {
+    height: 260px;
+  }
+
+  .gallery-card h3 {
+    font-size: 1.1rem;
+    padding: 12px 12px 4px;
+  }
+
+  .gallery-card p {
+    font-size: 15px;
+    padding: 0 12px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-page {
+    padding: 24px 16px;
+  }
+
+  .gallery-page h1 {
+    font-size: 30px;
+    margin-bottom: 24px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .gallery-card img {
+    height: 280px;
+  }
+
+  .gallery-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .gallery-card p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
 }
