@@ -4,7 +4,6 @@
 /* ========== ROOT VARIABLES ========== */
 
 :root {
-
   /* Luxury Palette */
   --warm-white: #F8F5F2;
   --soft-beige: #EFE6DD;
@@ -43,7 +42,6 @@ html {
 /* ========== BODY ========== */
 
 body {
-
   font-family: 'Inter', sans-serif;
 
   background:
@@ -82,100 +80,66 @@ a {
 /* ========== GLOBAL BUTTON STYLE ========== */
 
 button {
-
   border: none;
-
   outline: none;
-
   cursor: pointer;
-
   font-family: inherit;
-
   transition: var(--transition-smooth);
 }
 
 /* ========== COMMON CONTAINER ========== */
 
 .container {
-
   width: 100%;
-
   max-width: 1400px;
-
   margin: auto;
-
   padding: 0 40px;
 }
 
 /* ========== COMMON SECTION SPACING ========== */
 
 .section {
-
   padding: 100px 0;
 }
 
 /* ========== GLOBAL HEADING STYLES ========== */
 
 .section-title {
-
   font-family: 'Playfair Display', serif;
-
   font-size: 56px;
-
   font-weight: 600;
-
   line-height: 1.1;
-
   letter-spacing: -1.5px;
-
   text-align: center;
-
   margin-bottom: 20px;
 }
 
 .section-subtitle {
-
   font-size: 18px;
-
   color: var(--text-light);
-
   text-align: center;
-
   max-width: 700px;
-
   margin: auto;
-
   line-height: 1.8;
 }
 
 /* ========== GLOBAL BUTTON CLASS ========== */
 
 .primary-btn {
-
   padding: 16px 38px;
-
   border-radius: 999px;
-
   background: var(--champagne-gold);
-
   color: white;
-
   font-size: 15px;
-
   font-weight: 600;
-
   letter-spacing: 0.3px;
-
   box-shadow:
     0 8px 28px rgba(198, 169, 114, 0.18);
 }
 
 .primary-btn:hover {
-
   transform: translateY(-3px);
-
   background: var(--gold-hover);
-
   box-shadow:
     0 14px 34px rgba(198, 169, 114, 0.28);
 }
@@ -183,55 +147,46 @@ button {
 /* ========== SECONDARY BUTTON ========== */
 
 .secondary-btn {
-
   padding: 16px 34px;
-
   border-radius: 999px;
-
   background: transparent;
-
   border: 1px solid rgba(0, 0, 0, 0.08);
-
   color: var(--text-dark);
-
   font-size: 15px;
-
   font-weight: 500;
-
   backdrop-filter: blur(12px);
 }
 
 .secondary-btn:hover {
-
   background: rgba(255, 255, 255, 0.5);
-
   transform: translateY(-2px);
 }
 
 /* ========== GLASS CARD ========== */
 
 .glass-card {
-
   background: rgba(255, 255, 255, 0.5);
-
   border: 1px solid rgba(255, 255, 255, 0.4);
-
   backdrop-filter: blur(14px);
-
   border-radius: 28px;
-
   box-shadow: var(--shadow-soft);
 }
 
 /* ========== IMAGES ========== */
 
 img {
-
   width: 100%;
-
+  max-width: 100%;
   display: block;
-
   object-fit: cover;
+}
+
+/* ========== FORM ELEMENTS ========== */
+
+input,
+textarea,
+select {
+  max-width: 100%;
 }
 
 /* ========== SCROLLBAR ========== */
@@ -259,7 +214,6 @@ img {
 /* ========== RESPONSIVE DESIGN ========== */
 
 @media (max-width: 992px) {
-
   .container {
     padding: 0 24px;
   }
@@ -274,7 +228,6 @@ img {
 }
 
 @media (max-width: 768px) {
-
   .section {
     padding: 70px 0;
   }
@@ -285,25 +238,36 @@ img {
 
   .primary-btn,
   .secondary-btn {
-
     padding: 14px 28px;
-
     font-size: 14px;
   }
 }
 
 @media (max-width: 480px) {
-
   .container {
     padding: 0 18px;
   }
 
+  .section {
+    padding: 55px 0;
+  }
+
   .section-title {
     font-size: 30px;
+    letter-spacing: -0.8px;
   }
 
   .section-subtitle {
     font-size: 15px;
     line-height: 1.7;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    max-width: 100%;
+  }
+
+  .glass-card {
+    border-radius: 20px;
   }
 }
