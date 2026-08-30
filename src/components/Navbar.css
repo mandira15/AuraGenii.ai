@@ -1,5 +1,7 @@
 /* ========== NAVBAR ========== */
+
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+
 .navbar {
   width: 100%;
   position: sticky;
@@ -39,6 +41,8 @@
   grid-template-columns: 220px 1fr 260px;
 
   align-items: center;
+
+  box-sizing: border-box;
 }
 
 /* ========== LOGO ========== */
@@ -57,6 +61,7 @@
   height: 70px;
 
   width: auto;
+  max-width: 100%;
 
   border-radius: 18px;
 
@@ -156,6 +161,8 @@
   transition: 0.3s;
 
   box-shadow: 0 8px 24px rgba(198, 169, 114, 0.18);
+
+  white-space: nowrap;
 }
 
 .login-btn:hover,
@@ -173,7 +180,7 @@
   .nav-container {
     grid-template-columns: 170px 1fr 210px;
 
-    padding: 16px 20px;
+    padding: 12px 20px;
   }
 
   .logo-img {
@@ -190,20 +197,90 @@
 
   .login-btn,
   .start-btn {
-    padding: 20px 20px;
+    padding: 11px 18px;
 
-    font-size: 25px;
+    font-size: 16px;
+  }
+
+  .nav-buttons {
+    gap: 10px;
   }
 }
+
+/* ========== MOBILE NAVBAR ========== */
 
 @media (max-width: 900px) {
   .nav-container {
     display: flex;
 
     justify-content: space-between;
+
+    align-items: center;
+
+    padding: 10px 20px;
+
+    gap: 12px;
   }
 
   .nav-links {
     display: none;
+  }
+
+  .nav-buttons {
+    margin-left: auto;
+
+    gap: 10px;
+  }
+
+  .login-btn,
+  .start-btn {
+    padding: 10px 17px;
+
+    font-size: 15px;
+  }
+
+  .logo-img {
+    height: 52px;
+  }
+}
+
+/* ========== SMALL PHONES ========== */
+
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 8px 14px;
+
+    gap: 8px;
+  }
+
+  .logo-img {
+    height: 46px;
+    border-radius: 14px;
+  }
+
+  .nav-buttons {
+    gap: 6px;
+  }
+
+  .login-btn,
+  .start-btn {
+    padding: 9px 12px;
+
+    font-size: 13px;
+  }
+}
+
+/* ========== VERY SMALL PHONES ========== */
+
+@media (max-width: 360px) {
+  .logo-img {
+    height: 42px;
+  }
+
+  .login-btn,
+  .start-btn {
+    padding: 8px 10px;
+
+    font-size: 12px;
   }
 }
