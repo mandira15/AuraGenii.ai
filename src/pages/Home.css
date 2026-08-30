@@ -1,77 +1,54 @@
 /* ========== HOME PAGE ========== */
 
 .home-page {
-
   width: 100%;
-
   overflow-x: hidden;
 }
 
 /* ========== HERO SECTION ========== */
 
 .main-content {
-
   width: 100%;
-
   min-height: 88vh;
-
   display: flex;
   flex-direction: column;
-
   justify-content: center;
   align-items: center;
-
   text-align: center;
-
   padding: 0 20px;
-
   position: relative;
 }
 
 /* Background Glow */
 
 .main-content::before {
-
   content: "";
-
   position: absolute;
-
   width: 700px;
   height: 700px;
-
   background:
     radial-gradient(
       circle,
       rgba(198, 169, 114, 0.16) 0%,
       transparent 70%
     );
-
   top: 50%;
   left: 50%;
-
   transform: translate(-50%, -50%);
-
   z-index: -1;
+  pointer-events: none;
 }
 
 /* ========== HERO HEADING ========== */
 
 .main-content h1 {
-
   font-family: 'Playfair Display', serif;
-
   font-size: 96px;
-
   line-height: 1.02;
-
   font-weight: 600;
-
   letter-spacing: -3px;
-
   color: var(--text-dark);
-
   max-width: 1000px;
-
   margin-bottom: 26px;
 }
 
@@ -79,58 +56,40 @@
 
 .main-content h1 span {
   font-family: "Cormorant Garamond", serif;
-font-weight: 600;
+  font-weight: 600;
   color: var(--champagne-gold);
 }
 
 /* ========== HERO SUBTITLE ========== */
 
 .main-content p {
-
   font-size: 20px;
-
   line-height: 1.8;
-
   color: var(--text-light);
-
   max-width: 760px;
-
   margin-bottom: 42px;
 }
 
 /* ========== HERO BUTTON ========== */
 
 .hero-btn {
-
   background: #C6A972;
-
   color: #ffffff;
-
-  
   border-radius: 999px;
-
   border: none;
-
   padding: 14px 34px;
   font-size: 16px;
   font-weight: 600;
-
   letter-spacing: 0.3px;
-
   cursor: pointer;
-
   transition: all 0.35s ease;
-
   box-shadow:
     0 8px 24px rgba(198, 169, 114, 0.18);
 }
 
 .hero-btn:hover {
-
   transform: translateY(-2px);
-
   background: #B8945F;
-
   box-shadow:
     0 12px 30px rgba(198, 169, 114, 0.28);
 }
@@ -138,55 +97,41 @@ font-weight: 600;
 /* ========== MOCKUPS SECTION ========== */
 
 .mock-ups {
-
   width: 100%;
-
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
-
   gap: 30px;
-
   padding: 0 55px 90px;
+  box-sizing: border-box;
 }
 
 /* ========== MOCKUP CARDS ========== */
 
 .mock-up-card {
-
   position: relative;
-
   overflow: hidden;
-
   padding: 22px;
-
   border-radius: 30px;
-
   min-height: 420px;
-
   transition: var(--transition-smooth);
-
   animation: floatCard 5s ease-in-out infinite;
+  box-sizing: border-box;
 }
 
 /* Floating Delay */
 
 .mock-up-card:nth-child(2) {
-
   animation-delay: 1s;
 }
 
 .mock-up-card:nth-child(3) {
-
   animation-delay: 2s;
 }
 
 /* Hover */
 
 .mock-up-card:hover {
-
   transform: translateY(-10px);
-
   box-shadow:
     0 20px 45px rgba(0, 0, 0, 0.08);
 }
@@ -194,7 +139,6 @@ font-weight: 600;
 /* ========== FLOATING ANIMATION ========== */
 
 @keyframes floatCard {
-
   0% {
     transform: translateY(0px);
   }
@@ -211,85 +155,120 @@ font-weight: 600;
 /* ========== FOOTER ========== */
 
 .footer {
-
   margin-top: 70px;
-
   text-align: center;
-
   padding: 42px 20px;
-
   border-top: 1px solid var(--border-light);
+  box-sizing: border-box;
 }
 
 .footer p {
-
   font-size: 14px;
-
   color: var(--text-light);
-
   letter-spacing: 0.4px;
 }
 
 /* ========== RESPONSIVE DESIGN ========== */
 
+/* Tablets / Smaller Laptops */
 @media (max-width: 1100px) {
-
   .main-content h1 {
-
     font-size: 72px;
   }
 
   .mock-ups {
-
     grid-template-columns: 1fr;
-
     padding: 0 24px 70px;
   }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
-
   .main-content {
-
     min-height: 75vh;
-
     padding: 40px 20px;
+    box-sizing: border-box;
   }
 
   .main-content h1 {
-
+    width: 100%;
     font-size: 54px;
-
+    line-height: 1.08;
     letter-spacing: -1.5px;
+    margin-bottom: 20px;
   }
 
   .main-content p {
-
+    width: 100%;
     font-size: 17px;
+    line-height: 1.65;
+    margin-bottom: 30px;
   }
 
-  .mock-up-card {
-
-    min-height: auto;
-  }
-}
-
-@media (max-width: 480px) {
-
-  .main-content h1 {
-
-    font-size: 42px;
-  }
-
-  .main-content p {
-
-    font-size: 15px;
-
-    line-height: 1.7;
+  .hero-btn {
+    max-width: 100%;
+    padding: 13px 28px;
   }
 
   .mock-ups {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 20px 60px;
+  }
 
-    padding: 0 18px 60px;
+  .mock-up-card {
+    width: 100%;
+    min-height: auto;
+    padding: 18px;
+    border-radius: 24px;
+  }
+
+  .footer {
+    margin-top: 40px;
+    padding: 32px 16px;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .main-content {
+    min-height: 70vh;
+    padding: 32px 16px;
+  }
+
+  .main-content::before {
+    width: 450px;
+    height: 450px;
+  }
+
+  .main-content h1 {
+    font-size: 42px;
+    line-height: 1.1;
+    letter-spacing: -1px;
+  }
+
+  .main-content p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 26px;
+  }
+
+  .hero-btn {
+    font-size: 15px;
+    padding: 12px 26px;
+  }
+
+  .mock-ups {
+    padding: 0 16px 50px;
+    gap: 16px;
+  }
+
+  .mock-up-card {
+    padding: 16px;
+    border-radius: 22px;
+  }
+
+  .footer p {
+    font-size: 13px;
   }
 }
