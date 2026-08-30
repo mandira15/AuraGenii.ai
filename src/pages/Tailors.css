@@ -2,6 +2,7 @@
   min-height: 100vh;
   padding: 50px 8%;
   background: #f7f2ea;
+  box-sizing: border-box;
 }
 
 .tailors-header {
@@ -37,6 +38,7 @@
   overflow: hidden;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
+  min-width: 0;
 }
 
 .tailor-card:hover {
@@ -48,6 +50,7 @@
   width: 100%;
   height: 280px;
   object-fit: cover;
+  display: block;
 }
 
 .tailor-info {
@@ -78,22 +81,94 @@
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
+  box-sizing: border-box;
 }
 
 .book-btn:hover {
   background: #b2935b;
 }
 
+/* ========== RESPONSIVE DESIGN ========== */
+
 @media (max-width: 768px) {
   .tailors-page {
     padding: 30px 5%;
+  }
+
+  .tailors-header {
+    margin-bottom: 35px;
   }
 
   .tailors-header h1 {
     font-size: 2.2rem;
   }
 
+  .tailors-header p {
+    font-size: 1rem;
+  }
+
+  .tailors-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
   .tailor-image {
     height: 240px;
+  }
+
+  .tailor-info {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tailors-page {
+    padding: 24px 16px;
+  }
+
+  .tailors-header {
+    margin-bottom: 28px;
+  }
+
+  .tailors-header h1 {
+    font-size: 1.9rem;
+    line-height: 1.1;
+  }
+
+  .tailors-header p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .tailors-grid {
+    gap: 16px;
+  }
+
+  .tailor-card {
+    border-radius: 20px;
+  }
+
+  .tailor-image {
+    height: 220px;
+  }
+
+  .tailor-info {
+    padding: 17px;
+  }
+
+  .tailor-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+
+  .tailor-info p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .book-btn {
+    margin-top: 14px;
+    padding: 12px;
+    font-size: 15px;
   }
 }

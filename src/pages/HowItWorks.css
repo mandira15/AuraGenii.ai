@@ -3,6 +3,7 @@
   margin: auto;
   padding: 60px 20px;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .how-header h1 {
@@ -31,9 +32,10 @@
   border-radius: 16px;
   backdrop-filter: blur(10px);
   transition: 0.3s;
+  min-width: 0;
 }
 
-.step-card p{
+.step-card p {
   color: #796e5f;
   padding: 15px;
   border-radius: 16px;
@@ -43,7 +45,7 @@
 
 .step-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px  #C6A972;
+  box-shadow: 0 10px 30px #C6A972;
 }
 
 .step-card h2 {
@@ -55,29 +57,35 @@
 
 .ai-section {
   margin-top: 80px;
-  border: 2px solid  #C4B9AA;
+  border: 2px solid #C4B9AA;
   border-radius: 18px;
-  color : white;
-  background-color:#574a37;
+  color: white;
+  background-color: #574a37;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .ai-box {
   margin-top: 30px;
   padding: 30px;
-  background: 	#796e5f;
+  background: #796e5f;
   border-radius: 18px;
   backdrop-filter: blur(16px);
+  box-sizing: border-box;
 }
 
 textarea {
   width: 100%;
+  max-width: 100%;
   height: 120px;
+  box-sizing: border-box;
   background: #9a9287;
   border: 1px solid #aaa3;
   padding: 15px;
   border-radius: 12px;
   color: white;
   font-size: 16px;
+  resize: vertical;
 }
 
 .button-row {
@@ -85,6 +93,7 @@ textarea {
   display: flex;
   justify-content: center;
   gap: 15px;
+  flex-wrap: wrap;
 }
 
 .ai-btn {
@@ -111,21 +120,17 @@ textarea {
   background: rgba(255,255,255,0.05);
   border-radius: 14px;
   color: white;
+  box-sizing: border-box;
 }
 
 .tailor-btn {
   margin-top: 20px;
   padding: 12px 25px;
-
   border: none;
   border-radius: 12px;
-
   background: #c6a972;
-
   color: white;
-
   cursor: pointer;
-
   font-size: 16px;
   font-weight: 600;
 }
@@ -146,6 +151,7 @@ textarea {
   margin: 30px auto;
   max-width: 1100px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  box-sizing: border-box;
 }
 
 .beta-tag {
@@ -167,4 +173,123 @@ textarea {
   color: #666;
   line-height: 1.7;
   margin: 0;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+@media (max-width: 900px) {
+  .how-page {
+    padding: 45px 20px;
+  }
+
+  .how-header h1 {
+    font-size: 46px;
+  }
+
+  .steps-section {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 45px;
+  }
+
+  .ai-section {
+    margin-top: 60px;
+  }
+
+  .beta-banner {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .how-page {
+    padding: 32px 16px;
+  }
+
+  .how-header h1 {
+    font-size: 36px;
+    line-height: 1.1;
+  }
+
+  .how-header p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .steps-section {
+    margin-top: 35px;
+    gap: 16px;
+  }
+
+  .step-card {
+    padding: 20px 16px;
+  }
+
+  .step-card h2 {
+    font-size: 22px;
+  }
+
+  .step-card p {
+    padding: 10px;
+    line-height: 1.5;
+  }
+
+  .ai-section {
+    margin-top: 45px;
+    border-radius: 15px;
+  }
+
+  .ai-box {
+    margin-top: 20px;
+    padding: 20px 16px;
+    border-radius: 14px;
+  }
+
+  textarea {
+    height: 110px;
+    font-size: 15px;
+  }
+
+  .button-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .ai-btn,
+  .gen-btn {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 18px;
+  }
+
+  .output-area {
+    margin-top: 25px;
+    padding: 20px 16px;
+  }
+
+  .tailor-btn {
+    width: 100%;
+    padding: 12px 18px;
+  }
+
+  .beta-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    margin: 24px auto;
+  }
+
+  .beta-tag {
+    padding: 7px 15px;
+  }
+
+  .beta-content h3 {
+    font-size: 18px;
+  }
+
+  .beta-content p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
 }
